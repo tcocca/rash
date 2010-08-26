@@ -5,11 +5,12 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "rash"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{simple extension to Hashie::Mash for rubyified keys}
+    gem.description = %Q{simple extension to Hashie::Mash for rubyified keys, all keys are converted to underscore to eliminate horrible camelCasing}
     gem.email = "tom.cocca@gmail.com"
     gem.homepage = "http://github.com/tcocca/rash"
     gem.authors = ["tcocca"]
+    gem.add_dependency "hashie", ">= 0.3.1"
     gem.add_development_dependency "rspec", ">= 1.2.9"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
