@@ -10,7 +10,7 @@ begin
     gem.email = "tom.cocca@gmail.com"
     gem.homepage = "http://github.com/tcocca/rash"
     gem.authors = ["tcocca"]
-    gem.add_dependency "hashie", ">= 0.3.1"
+    gem.add_dependency "hashie", ">= 0.4.0"
     gem.add_development_dependency "rspec", ">= 1.2.9"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
