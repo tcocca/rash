@@ -1,15 +1,14 @@
-require 'rubygems'
-require 'hashie'
+require 'hashie/mash'
 
 module Hashie
   class Rash < Mash
-    
+
     protected
-    
+
     def convert_key(key) #:nodoc:
       underscore_string(key.to_s)
     end
-    
+
     # converts a camel_cased string to a underscore string
     # subs spaces with underscores, strips whitespace
     # Same way ActiveSupport does string.underscore
@@ -22,7 +21,7 @@ module Hashie
         tr("-", "_").
         downcase
     end
-    
+
   end
-  
+
 end
