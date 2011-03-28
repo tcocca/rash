@@ -4,8 +4,6 @@ require "rash/version"
 
 Gem::Specification.new do |s|
   s.name = %q{rash}
-  s.version = "0.2.0"
-
   s.authors = ["tcocca"]
   s.date = %q{2010-08-31}
   s.description = %q{simple extension to Hashie::Mash for rubyified keys, all keys are converted to underscore to eliminate horrible camelCasing}
