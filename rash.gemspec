@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.5}
   s.summary = %q{simple extension to Hashie::Mash for rubyified keys}
 
-  s.version = Hashie::Rash::VERSION
+  s.version = Rash::VERSION
   s.platform = Gem::Platform::RUBY
 
   s.add_dependency "hashie", '~> 1.0.0'
