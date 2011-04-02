@@ -54,5 +54,6 @@ Copyright (c) 2010 Tom Cocca. See LICENSE for details.
 
 === Acknowledgements
 
-http://github.com/intridea for Hashie
-http://github.com/mislav for contributions to Rash
+* Intridea (https://github.com/intridea) for Hashie
+* Mislav Marohnić (https://github.com/mislav) for contributions to Rash
+* Steve Agalloco (https://github.com/spagalloco) for updating Rash to use bundler, rspec 2.5, hashie 1.0 and fixing some load dependencies
