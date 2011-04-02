@@ -50,7 +50,7 @@ You will now be able to access those keys through underscored key names (camelCa
 
 == Copyright
 
-Copyright (c) 2010 Tom Coccca. See LICENSE for details.
+Copyright (c) 2010 Tom Cocca. See LICENSE for details.
 
 === Acknowledgements
 
