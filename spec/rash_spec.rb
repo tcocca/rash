@@ -18,7 +18,8 @@ describe Hashie::Rash do
         :nestedThree => 23
       },
       "spaced Key" => "When would this happen?",
-      "trailing spaces " => "better safe than sorry"
+      "trailing spaces " => "better safe than sorry",
+      "extra   spaces" => "hopefully this never happens"
     })
   }
 
@@ -39,6 +40,7 @@ describe Hashie::Rash do
     subject.nested_two.nested_three.should == 23
     subject.spaced_key.should == "When would this happen?"
     subject.trailing_spaces.should == "better safe than sorry"
+    subject.extra_spaces.should == "hopefully this never happens"
   end
 
   it "should allow camelCased accessors" do
