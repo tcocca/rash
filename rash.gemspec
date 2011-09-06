@@ -5,19 +5,18 @@ require "rash/version"
 Gem::Specification.new do |s|
   s.name = %q{rash}
   s.authors = ["tcocca"]
-  s.date = %q{2010-08-31}
   s.description = %q{simple extension to Hashie::Mash for rubyified keys, all keys are converted to underscore to eliminate horrible camelCasing}
   s.email = %q{tom.cocca@gmail.com}
   s.homepage = %q{http://github.com/tcocca/rash}
   s.rdoc_options = ["--charset=UTF-8"]
-  s.rubygems_version = %q{1.3.5}
   s.summary = %q{simple extension to Hashie::Mash for rubyified keys}
 
   s.version = Rash::VERSION
-  s.platform = Gem::Platform::RUBY
 
-  s.add_dependency "hashie", '~> 1.0.0'
-  s.add_development_dependency "rspec", "~> 2.5.0"
+  s.add_dependency 'hashie', '~> 1.1.0'
+  s.add_development_dependency 'rake', '~> 0.9'
+  s.add_development_dependency 'rdoc', '~> 3.9'
+  s.add_development_dependency 'rspec', '~> 2.5'
 
   s.require_paths = ['lib']
   s.files = `git ls-files`.split("\n")

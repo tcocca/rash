@@ -7,9 +7,10 @@ RSpec::Core::RakeTask.new(:spec)
 task :test => :spec
 task :default => :spec
 
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
+require 'rdoc/task'
+require File.expand_path('../lib/rash/version', __FILE__)
+RDoc::Task.new do |rdoc|
+  version = Rash::VERSION
 
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title = "rash #{version}"
