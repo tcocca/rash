@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
   s.version = Rash::VERSION
 
   s.add_dependency 'hashie', '~> 1.1.0'
+  s.add_development_dependency 'rake', '~> 0.9'
   s.add_development_dependency 'rspec', '~> 2.5'
 
   s.require_paths = ['lib']
