@@ -27,16 +27,16 @@ You will now be able to access those keys through underscored key names (camelCa
     }
   })
   
-  @rash.var_one               # => 1
-  @rash.two                   # => 2
-  @rash.three                 # => 3
-  @rash.var_four              # => 4
-  @rash.five_hump_humps       # => 5
-  @rash.nested.nested_one     # => "One"
-  @rash.nested.two            # => "two"
-  @rash.nested.nested_three   # => "three"
-  @rash.nested_two.nested_two # => 22
-  @rash.nested_two            # => 23
+  @rash.var_one                 # => 1
+  @rash.two                     # => 2
+  @rash.three                   # => 3
+  @rash.var_four                # => 4
+  @rash.five_hump_humps         # => 5
+  @rash.nested.nested_one       # => "One"
+  @rash.nested.two              # => "two"
+  @rash.nested.nested_three     # => "three"
+  @rash.nested_two.nested_two   # => 22
+  @rash.nested_two.nested_three # => 23
 
 == Note on Patches/Pull Requests
  
