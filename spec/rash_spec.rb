@@ -95,6 +95,14 @@ describe Hashie::Rash do
     merged.nested3.helloWorld.should == "hi"
   end
 
+  it "should handle assigning a new Hash and convert it to a rash" do
+    subject.nested3 = {:helloWorld => "hi"}
+
+    subject.nested3.should be_a(Hashie::Rash)
+    subject.nested3.hello_world.should == "hi"
+    subject.nested3.helloWorld.should == "hi"
+  end
+
   it "should allow initializing reader" do
     subject.nested3!.helloWorld = "hi"
     subject.nested3.hello_world.should == "hi"
