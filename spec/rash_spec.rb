@@ -67,6 +67,7 @@ describe Hashie::Rash do
     merged.nested3.should be_a(Hashie::Rash)
     merged.nested3.hello_world.should == "hi"
     merged.nested3.helloWorld.should == "hi"
+    merged[:nested3][:helloWorld].should == "hi"
   end
 
   it "should update well with a Mash" do
@@ -80,6 +81,7 @@ describe Hashie::Rash do
     subject.nested3.should be_a(Hashie::Rash)
     subject.nested3.hello_world.should == "hi"
     subject.nested3.helloWorld.should == "hi"
+    subject[:nested3][:helloWorld].should == "hi"
   end
 
   it "should merge well with a Hash" do
@@ -93,6 +95,7 @@ describe Hashie::Rash do
     merged.nested3.should be_a(Hashie::Rash)
     merged.nested3.hello_world.should == "hi"
     merged.nested3.helloWorld.should == "hi"
+    merged[:nested3][:helloWorld].should == "hi"
   end
 
   it "should handle assigning a new Hash and convert it to a rash" do
@@ -101,6 +104,7 @@ describe Hashie::Rash do
     subject.nested3.should be_a(Hashie::Rash)
     subject.nested3.hello_world.should == "hi"
     subject.nested3.helloWorld.should == "hi"
+    subject[:nested3][:helloWorld].should == "hi"
   end
 
   it "should allow initializing reader" do
