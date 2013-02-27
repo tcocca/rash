@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
 
   s.version = Rash::VERSION
 
-  s.add_dependency 'hashie', '~> 1.2.0'
+  s.add_dependency 'hashie', '~> 2.0.0'
   s.add_development_dependency 'rake', '~> 0.9'
   s.add_development_dependency 'rdoc', '~> 3.9'
   s.add_development_dependency 'rspec', '~> 2.5'

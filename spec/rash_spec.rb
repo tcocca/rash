@@ -57,6 +57,19 @@ describe Hashie::Rash do
   end
 
   it "should merge well with a Mash" do
+    merged = subject.merge Hashie::Mash.new(
+      :nested => {:fourTimes => "a charm"},
+      :nested3 => {:helloWorld => "hi"}
+    )
+
+    merged.nested.four_times.should == "a charm"
+    merged.nested.fourTimes.should == "a charm"
+    merged.nested3.should be_a(Hashie::Rash)
+    merged.nested3.hello_world.should == "hi"
+    merged.nested3.helloWorld.should == "hi"
+  end
+
+  it "should update well with a Mash" do
     subject.update Hashie::Mash.new(
       :nested => {:fourTimes => "a charm"},
       :nested3 => {:helloWorld => "hi"}
@@ -64,8 +77,22 @@ describe Hashie::Rash do
 
     subject.nested.four_times.should == "a charm"
     subject.nested.fourTimes.should == "a charm"
+    subject.nested3.should be_a(Hashie::Rash)
     subject.nested3.hello_world.should == "hi"
     subject.nested3.helloWorld.should == "hi"
+  end
+
+  it "should merge well with a Hash" do
+    merged = subject.merge({
+      :nested => {:fourTimes => "work like a charm"},
+      :nested3 => {:helloWorld => "hi"}
+    })
+
+    merged.nested.four_times.should == "work like a charm"
+    merged.nested.fourTimes.should == "work like a charm"
+    merged.nested3.should be_a(Hashie::Rash)
+    merged.nested3.hello_world.should == "hi"
+    merged.nested3.helloWorld.should == "hi"
   end
 
   it "should allow initializing reader" do
