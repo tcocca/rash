@@ -38,6 +38,48 @@ You will now be able to access those keys through underscored key names (camelCa
   @rash.nested_two.nested_two   # => 22
   @rash.nested_two.nested_three # => 23
 
+= Unrash
+
+Unrash is an extension to Hashie ( http://github.com/intridea/hashie )
+
+Unrash subclasses Hashie::Mash to convert all keys in the hash to lower camel case
+
+The purpose of this is when working w/ Java (or any other apis) and need to send hashes (including nested) that need to be
+camelCased keys
+
+You will now be able to access those keys through camelCase key names (underscored still available)
+
+== Usage
+
+  @unrash = Hashie::UnRash.new({
+    "var_one" => 1,
+    "two" => 2,
+    :three => 3,
+    :var_four => 4,
+    "five_hump_humps" => 5,
+    :nested => {
+      "nested_one" => "One",
+      :two => "two",
+      "nested_three" => "three"
+    },
+    "nested_wwo" => {
+      "nested_two" => 22,
+      :nested_three => 23
+    }
+  })
+
+  @unrash.varOne                 # => 1
+  @unrash.two                     # => 2
+  @unrash.three                   # => 3
+  @unrash.varFour                # => 4
+  @unrash.fiveHumpHumps         # => 5
+  @unrash.nested.nestedOne       # => "One"
+  @unrash.nested.two              # => "two"
+  @unrash.nested.nestedThree     # => "three"
+  @unrash.nestedTwo.nestedTwo   # => 22
+  @unrash.nestedTwo.nestedThree # => 23
+
+
 == Note on Patches/Pull Requests
  
 * Fork the project.
@@ -57,3 +99,4 @@ Copyright (c) 2010 Tom Cocca. See LICENSE for details.
 * Intridea (https://github.com/intridea) for Hashie
 * Mislav Marohnić (https://github.com/mislav) for contributions to Rash
 * Steve Agalloco (https://github.com/spagalloco) for updating Rash to use bundler, rspec 2.5, hashie 1.0 and fixing some load dependencies
+* Sebastian Ortiz (https://github.com/neoecos) for the implementation of Unrash
