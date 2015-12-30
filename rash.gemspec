@@ -13,10 +13,10 @@ Gem::Specification.new do |s|
 
   s.version = Rash::VERSION
 
-  s.add_dependency 'hashie', '~> 2.0.0'
-  s.add_development_dependency 'rake', '~> 0.9'
-  s.add_development_dependency 'rdoc', '~> 3.9'
-  s.add_development_dependency 'rspec', '~> 2.5'
+  s.add_dependency 'hashie', '~> 3.4'
+  s.add_development_dependency 'rake', '~> 10.4'
+  s.add_development_dependency 'rdoc', '~> 4.2'
+  s.add_development_dependency 'rspec', '~> 3.4'
 
   s.require_paths = ['lib']
   s.files = `git ls-files`.split("\n")
