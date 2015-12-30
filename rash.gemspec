@@ -3,11 +3,11 @@ $:.push File.expand_path("../lib", __FILE__)
 require "rash/version"
 
 Gem::Specification.new do |s|
-  s.name = %q{rash}
-  s.authors = ["tcocca"]
+  s.name = %q{rash_alt}
+  s.authors = ["tcocca", "Shigenobu Nishikawa"]
   s.description = %q{simple extension to Hashie::Mash for rubyified keys, all keys are converted to underscore to eliminate horrible camelCasing}
-  s.email = %q{tom.cocca@gmail.com}
-  s.homepage = %q{http://github.com/tcocca/rash}
+  s.email = %q{tom.cocca@gmail.com, shishi.s.n@gmail.com}
+  s.homepage = "https://github.com/shishi/rash"
   s.rdoc_options = ["--charset=UTF-8"]
   s.summary = %q{simple extension to Hashie::Mash for rubyified keys}
 
