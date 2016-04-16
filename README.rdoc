@@ -1,5 +1,7 @@
 = rash
 
+{<img src="https://badge.fury.io/rb/rash_alt.svg" alt="Gem Version" />}[https://badge.fury.io/rb/rash_alt]
+
 Rash is an extension to Hashie ( http://github.com/intridea/hashie )
 
 Rash subclasses Hashie::Mash to convert all keys in the hash to underscore
@@ -50,8 +52,8 @@ You will now be able to access those keys through underscored key names (camelCa
 
 == Copyright
 
-Copyright (c) 2010 Tom Cocca. See LICENSE for details.
-Copyright (c) 2016 Shigenobu Nishikawa. See LICENSE for details.
+* Copyright (c) 2010 Tom Cocca.
+* Copyright (c) 2016 Shigenobu Nishikawa.
 
 === Acknowledgements
 
