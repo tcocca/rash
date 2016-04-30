@@ -11,6 +11,20 @@ The purpose of this is when working w/ Java (or any other apis) that return hash
 
 You will now be able to access those keys through underscored key names (camelCase still available)
 
+== Installation
+
+Add this line to your application's Gemfile:
+
+  gem 'rash_alt', require: 'rash'
+
+And then execute:
+
+  $ bundle
+
+Or install it yourself as:
+
+  $ gem install rash_alt
+
 == Usage
 
   @rash = Hashie::Mash::Rash.new({
