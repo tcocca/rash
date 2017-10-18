@@ -1,7 +1,7 @@
 = rash
 
 {<img src="https://badge.fury.io/rb/rash_alt.svg" alt="Gem Version" />}[https://badge.fury.io/rb/rash_alt]
-{<img src="https://travis-ci.org/shishi/rash.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/shishi/rash_alt]
+{<img src="https://travis-ci.org/shishi/rash_alt.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/shishi/rash_alt]
 
 Rash is an extension to Hashie ( http://github.com/intridea/hashie )
 
