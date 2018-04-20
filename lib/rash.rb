@@ -1,1 +1,1 @@
-require 'hashie/rash'
+require 'hashie/mash/rash'

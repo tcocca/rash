@@ -1,5 +1,8 @@
 = rash
 
+{<img src="https://badge.fury.io/rb/rash_alt.svg" alt="Gem Version" />}[https://badge.fury.io/rb/rash_alt]
+{<img src="https://travis-ci.org/shishi/rash_alt.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/shishi/rash_alt]
+
 Rash is an extension to Hashie ( http://github.com/intridea/hashie )
 
 Rash subclasses Hashie::Mash to convert all keys in the hash to underscore
@@ -8,16 +11,30 @@ The purpose of this is when working w/ Java (or any other apis) that return hash
 
 You will now be able to access those keys through underscored key names (camelCase still available)
 
+== Installation
+
+Add this line to your application's Gemfile:
+
+  gem 'rash_alt', require: 'rash'
+
+And then execute:
+
+  $ bundle
+
+Or install it yourself as:
+
+  $ gem install rash_alt
+
 == Usage
 
-  @rash = Hashie::Rash.new({
-    "varOne" => 1, 
-    "two" => 2, 
-    :three => 3, 
-    :varFour => 4, 
-    "fiveHumpHumps" => 5, 
+  @rash = Hashie::Mash::Rash.new({
+    "varOne" => 1,
+    "two" => 2,
+    :three => 3,
+    :varFour => 4,
+    "fiveHumpHumps" => 5,
     :nested => {
-      "NestedOne" => "One", 
+      "NestedOne" => "One",
       :two => "two",
       "nested_three" => "three"
     },
@@ -26,7 +43,7 @@ You will now be able to access those keys through underscored key names (camelCa
       :nestedThree => 23
     }
   })
-  
+
   @rash.var_one                 # => 1
   @rash.two                     # => 2
   @rash.three                   # => 3
@@ -39,7 +56,7 @@ You will now be able to access those keys through underscored key names (camelCa
   @rash.nested_two.nested_three # => 23
 
 == Note on Patches/Pull Requests
- 
+
 * Fork the project.
 * Make your feature addition or bug fix.
 * Add tests for it. This is important so I don't break it in a
@@ -50,7 +67,8 @@ You will now be able to access those keys through underscored key names (camelCa
 
 == Copyright
 
-Copyright (c) 2010 Tom Cocca. See LICENSE for details.
+* Copyright (c) 2010 Tom Cocca.
+* Copyright (c) 2016 Shigenobu Nishikawa.
 
 === Acknowledgements
 

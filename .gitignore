@@ -13,6 +13,9 @@ tmtags
 ## VIM
 *.swp
 
+## INTELLIJ
+.idea
+
 ## PROJECT::GENERAL
 coverage
 rdoc

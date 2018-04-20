@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Hashie::Rash do
+describe Hashie::Mash::Rash do
   subject {
-    Hashie::Rash.new({
+    Hashie::Mash::Rash.new({
       "varOne" => 1,
       "two" => 2,
       :three => 3,
@@ -17,6 +17,10 @@ describe Hashie::Rash do
         "nested_two" => 22,
         :nestedThree => 23
       },
+      :nestedThree => [
+        { :nestedFour => 4 },
+        { "nestedFour" => 4 }
+      ],
       "spaced Key" => "When would this happen?",
       "trailing spaces " => "better safe than sorry",
       "extra   spaces" => "hopefully this never happens"
@@ -31,11 +35,11 @@ describe Hashie::Rash do
     subject.three.should == 3
     subject.var_four.should == 4
     subject.five_hump_humps.should == 5
-    subject.nested.should be_a(Hashie::Rash)
+    subject.nested.should be_a(Hashie::Mash::Rash)
     subject.nested.nested_one.should == "One"
     subject.nested.two.should == "two"
     subject.nested.nested_three.should == "three"
-    subject.nested_two.should be_a(Hashie::Rash)
+    subject.nested_two.should be_a(Hashie::Mash::Rash)
     subject.nested_two.nested_two.should == 22
     subject.nested_two.nested_three.should == 23
     subject.spaced_key.should == "When would this happen?"
@@ -64,7 +68,7 @@ describe Hashie::Rash do
 
     merged.nested.four_times.should == "a charm"
     merged.nested.fourTimes.should == "a charm"
-    merged.nested3.should be_a(Hashie::Rash)
+    merged.nested3.should be_a(Hashie::Mash::Rash)
     merged.nested3.hello_world.should == "hi"
     merged.nested3.helloWorld.should == "hi"
     merged[:nested3][:helloWorld].should == "hi"
@@ -78,7 +82,7 @@ describe Hashie::Rash do
 
     subject.nested.four_times.should == "a charm"
     subject.nested.fourTimes.should == "a charm"
-    subject.nested3.should be_a(Hashie::Rash)
+    subject.nested3.should be_a(Hashie::Mash::Rash)
     subject.nested3.hello_world.should == "hi"
     subject.nested3.helloWorld.should == "hi"
     subject[:nested3][:helloWorld].should == "hi"
@@ -92,7 +96,7 @@ describe Hashie::Rash do
 
     merged.nested.four_times.should == "work like a charm"
     merged.nested.fourTimes.should == "work like a charm"
-    merged.nested3.should be_a(Hashie::Rash)
+    merged.nested3.should be_a(Hashie::Mash::Rash)
     merged.nested3.hello_world.should == "hi"
     merged.nested3.helloWorld.should == "hi"
     merged[:nested3][:helloWorld].should == "hi"
@@ -101,10 +105,18 @@ describe Hashie::Rash do
   it "should handle assigning a new Hash and convert it to a rash" do
     subject.nested3 = {:helloWorld => "hi"}
 
-    subject.nested3.should be_a(Hashie::Rash)
+    subject.nested3.should be_a(Hashie::Mash::Rash)
     subject.nested3.hello_world.should == "hi"
     subject.nested3.helloWorld.should == "hi"
     subject[:nested3][:helloWorld].should == "hi"
+  end
+
+  it "should convert an array of Hashes" do
+    subject.nested_three.should be_a(Array)
+    subject.nested_three[0].should be_a(Hashie::Mash::Rash)
+    subject.nested_three[0].nested_four.should == 4
+    subject.nested_three[1].should be_a(Hashie::Mash::Rash)
+    subject.nested_three[1].nested_four.should == 4
   end
 
   it "should allow initializing reader" do
