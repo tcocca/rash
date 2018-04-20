@@ -17,6 +17,10 @@ describe Hashie::Mash::Rash do
         "nested_two" => 22,
         :nestedThree => 23
       },
+      :nestedThree => [
+        { :nestedFour => 4 },
+        { "nestedFour" => 4 }
+      ],
       "spaced Key" => "When would this happen?",
       "trailing spaces " => "better safe than sorry",
       "extra   spaces" => "hopefully this never happens"
@@ -105,6 +109,14 @@ describe Hashie::Mash::Rash do
     subject.nested3.hello_world.should == "hi"
     subject.nested3.helloWorld.should == "hi"
     subject[:nested3][:helloWorld].should == "hi"
+  end
+
+  it "should convert an array of Hashes" do
+    subject.nested_three.should be_a(Array)
+    subject.nested_three[0].should be_a(Hashie::Mash::Rash)
+    subject.nested_three[0].nested_four.should == 4
+    subject.nested_three[1].should be_a(Hashie::Mash::Rash)
+    subject.nested_three[1].nested_four.should == 4
   end
 
   it "should allow initializing reader" do
